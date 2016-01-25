@@ -38,7 +38,7 @@
     {
        
         if (arguments.length>0)
-        {console.log('SUM is ',getSum(secondParam,0));}
+        {console.log('SUM is ',getSum(arguments,0));}
         else
         {
              if (this.numbers.length>0)
@@ -51,7 +51,7 @@
     this.doAvg=function()
     {
         if (arguments.length>0)
-        {console.log('AVG is ',getAvg(secondParam));
+        {console.log('AVG is ',getAvg(arguments));
         }
         else
         {
@@ -64,7 +64,7 @@
     this.getMaximum=function()
     {
         if (arguments.length>0)
-        {console.log('MAX is ',getMaximum(secondParam,0));}
+        {console.log('MAX is ',getMaximum(arguments,0));}
         else
         {
             if (this.numbers.length>0)
@@ -76,7 +76,7 @@
     this.getMinimum=function()
     {
         if (arguments.length>0)
-        {console.log('MIN is ',getMinimum(secondParam,0));}
+        {console.log('MIN is ',getMinimum(arguments,0));}
         else
         {
             if (this.numbers.length>0)
