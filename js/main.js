@@ -67,3 +67,46 @@ var age='';
 
 var student=new Student('Toto','Perez',20);
 console.log(student.GetFullName());
+var CountWords=function(paramParagraph){
+    return paramParagraph.split(' ').length;
+
+};
+var paragraph='I have a table that contains information about customers including how they were referred. For example MyTable (EDIT: My over simplification resulted in answers that would not work. They are good answers, but do not solve my problem. I have added the last piece of the puzzle for clarity): ';
+var cantWords=CountWords(paragraph);
+console.log('Total words: ',cantWords);
+
+
+var GetNow=function(){
+    var datetim=new Date(Date.now());
+    var numDay=datetim.getDay();
+    var day='';
+    switch (numDay){
+        case 1:
+            day='Monday';
+            break;
+        case 2:
+            day='Tuesday';
+            break;
+        case 3:
+            day='Wednesday';
+            break;
+        case 4:
+            day='Thursday';
+            break;
+        case 5:
+            day='Friday';
+            break;
+        case 6:
+            day='Saturday';
+            break;
+        case 7:
+            day='Sunday';
+            break;
+    }
+    console.log('Today is ',day);
+    console.log('Current time is :',datetim.toLocaleTimeString().split(" ")[0].split(":")[0],"",datetim.toLocaleTimeString().split(" ")[1],"",datetim.toLocaleTimeString().split(" ")[0].split(":")[1],":",datetim.toLocaleTimeString().split(" ")[0].split(":")[2]);
+
+};
+
+GetNow();
+
