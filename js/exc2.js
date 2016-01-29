@@ -3,8 +3,8 @@
  */
 /**
  * Return Date actual
- * @param None
- * @returns {Date time}
+ * @param {} None
+ * @returns {} String giving the date time of now
  */
 var GetNow=function(){
     var datetim=new Date(Date.now());

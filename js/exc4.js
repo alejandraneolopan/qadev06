@@ -6,7 +6,7 @@
  */
 /**
  * Return FACTORIAL of a NUMBER
- * @param integer
+ * @param numToFact is a integer
  * @returns {int }
  */
 

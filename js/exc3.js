@@ -3,8 +3,8 @@
  */
 /**
  * Return Date actual
- * @param void
- * @returns {Date time}
+ * @param ini as integer, fin as an integer
+ * @returns {number} capicua form
  */
 
 
