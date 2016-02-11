@@ -81,7 +81,7 @@ JSTest.prototype.evalParagraph=function(paragraph, stringToFind){
     match= aRegExp.exec(paragraph);
     console.log(match[0]);
     console.log(match[1]);
-    var matches=[];
+    var matches=[];//
       while (match[i]) {
         matches.push(match[i]);
 i++;
