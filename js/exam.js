@@ -19,7 +19,7 @@ JSTest.prototype.getPrimeNumbers=function(nPrimes){
     var iniInteger = 1 ;
     var countPrimes = 0;
     var isPrime;
-    while (countPrimes < nPrimes)
+    while (countPrimes  < nPrimes)
     {
         //Evaluate if is prime
         isPrime = true;
