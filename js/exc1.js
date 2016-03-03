@@ -1,34 +1,137 @@
-var MathNumbers=function() {
-this.params=arguments;
+/**
+ * @Class: MathNumbers
+ * @Description: Contain a set of numbers, it contains the methods: Maximum, minimum, avg,sum over whole set
+ * @Created: alejandraneolopan
+ * @Date: 1/19/2016.
+ */
+
+ var MathNumbers=function(){//arguments n, no hay forma de decir varios...
+    //Properties
+    this.numbers=arguments;
+    //Methods
+    this.doOpe=function(){
+        
+        if (arguments.length>0)
+        {
+         //If there is arguments mathe.doOpe(1,2,3)   
+            this.doSum.apply(this, arguments);
+            this.doAvg.apply(this, arguments);
+            this.getMaximum.apply(this, arguments);
+            this.getMinimum.apply(this, arguments);
+        }
+        else
+        {//If the object call mathe=new MatNumbers(1,2,3); mathe.doOpe()
+            if (this.numbers.length>0)
+            {
+            //Display all operations in console
+            this.doSum();
+            this.doAvg();
+            this.getMaximum();
+            this.getMinimum();
+            }
+            else
+                {console.log('There is not numbers for the operations');}
+        }
+    };
+
+    this.doSum=function()
+    {
+       
+        if (arguments.length>0)
+        {console.log('SUM is ',getSum(arguments,0));}
+        else
+        {
+             if (this.numbers.length>0)
+            {console.log('SUM is ',getSum(this.numbers,0));}
+            else
+                {console.log('There is not numbers for the sum');}
+        }
+    };
+   
+    this.doAvg=function()
+    {
+        if (arguments.length>0)
+        {console.log('AVG is ',getAvg(arguments));
+        }
+        else
+        {
+            if (this.numbers.length>0)
+            {console.log('AVG is ',getAvg(this.numbers));}
+            else
+                {console.log('There is not numbers for the Average.');}
+        }
+    };
+    this.getMaximum=function()
+    {
+        if (arguments.length>0)
+        {console.log('MAX is ',getMaximum(arguments,0));}
+        else
+        {
+            if (this.numbers.length>0)
+            {console.log('MAX is ',getMaximum(this.numbers,0));}
+            else
+                {console.log('There is not numbers for the Maximum.');}
+        }
+    };
+    this.getMinimum=function()
+    {
+        if (arguments.length>0)
+        {console.log('MIN is ',getMinimum(arguments,0));}
+        else
+        {
+            if (this.numbers.length>0)
+            {
+            console.log('MIN is ',getMinimum(this.numbers,0));}
+            else
+                {console.log('There is not numbers for the Minimum.');}
+        }
+    };
 };
-MathNumbers.prototype.doOpe=function()
+//Methods independent
+//Maximum using recursive methods
+var getMaximum=function(params,n)
 {
-    obj2.doOpe.apply(this.arguments);
-    obj2.doSum.apply(this.arguments);
-    obj2.getMaximum.apply(this.arguments);
-    obj2.getMinimum.apply(this.arguments);
-    obj2.doAvg.apply(this.arguments);
-};
-MathNumbers.prototype.doSum=function(){
-    if (arguments.length>1)
-    {}
+    if(!params[n])
+    {
+        return 0;
+    }
     else
-    {//params
-     }
+    {  var aux= getMaximum(params,n+1);
+        if (params[n]>aux)
+        {return params[n];}
+        else
+        {return aux;}
+    }
 };
-MathNumbers.prototype.getMaximum=function(){};
-MathNumbers.prototype.getMinimum=function(){};
-MathNumbers.prototype.doAvg=function(){};
-MathNumbers.prototype.doOpe=function(){};
+//Minimum using recursive methods
+var getMinimum=function(params,n)
+{
+    if(!params[n])
+    {return 9999;}
+    else
+    {
+        var aux=getMinimum(params,n+1);
+        if (params[n]<aux)
+        {return params[n];}
+        else
+        {return aux;}
+    }
+};
+//Average
+var getAvg=function(params)
+{
+    return getSum(params,0)/params.length;
+};
+//Sum using recursive methods
+var getSum=function(params,n)
+{
+    if (!params[n])
+    {return 0;}
+    else
+    {
+        return params[n]+getSum(params,n+1);
+    }
+};
 
-
-
-var obj=new MathNumbers(1,2,3,4);
-obj.doOpe();
-
-var obj2=new MathNumbers();
-obj2.doOpe(4,7,1);
-obj2.doSum(3,4,5);
-obj2.getMaximum(3,4,5);
-obj2.getMinimum(3,4,5);
-obj2.doAvg(3,4,5);
+var mathe=new MathNumbers();
+mathe.doOpe(1,2,3);

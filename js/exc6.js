@@ -8,19 +8,42 @@ var createTable=function(rows, cols)
 
         //var newButton = document.createElement('button');
         //newButton.setAttribute('type', 'text');
-        var tr = document.createElement('tr');
-        tr.innerHTML = new Array(cols+1).join(
-            '<td><input type="text" /></td>'
-        );
+        var tr,td;
+
+        //tr.innerHTML = new Array(cols+1).join(
+          //  '<td><input type="text" /></td>' );
+
 // appends 3 rows to the table by cloning the template row
         for (var i = 0; i < rows; i++) {
-            table1.appendChild(tr.cloneNode(true));
+            tr = document.createElement('tr');
+            for (var j = 0; j < cols; j++) {
+                td = document.createElement('td');
+                td.innerHTML=' Hola';
+                td.addEventListener('mouseover',changeColor);
+                td.addEventListener('mouseout',changeColorAqua);
+                td.addEventListener('click',changeColorGreen);
+                tr.appendChild(td);
+            }
+            table1.appendChild(tr);
+
         }
 
 
-    var body1=document.getElementsByTagName("body")[0];
+    document.body.appendChild(table1);
 
-    body1.appendChild(table1);
+
 };
+function changeColor(e)
+{e.target.setAttribute('bgcolor','yellow');
+}
+function changeColorAqua(e)
+{e.target.setAttribute('bgcolor','white');
+}
+function changeColorGreen(e)
+{
+    e.target.setAttribute('bgcolor','green');
+    e.target.removeEventListener('mouseover',changeColor);
+    e.target.removeEventListener('mouseout',changeColorAqua);
+}
 createTable(3,4);
 
